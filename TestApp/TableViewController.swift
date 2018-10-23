@@ -8,29 +8,41 @@
 
 import UIKit
 
+typealias JSONDictionary = [String:Any]
+
 class TableViewController: UITableViewController {
     var starshipData = [StarshipData]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        getStarshipData()
+    }
+
+    func getStarshipData() {
         if let url = URL(string: "https://swapi.co/api/starships") {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if let data = data {
                     // Parse JSON response
                     do {
-                        let jsonObject = try JSONSerialization.jsonObject(with: data) as! [String: Any]
-/*                        if let jsonArray = jsonObject["results"] as? [String: Any] {
-                            for ship in jsonArray.values as! Dictionary<String, Any> {
+                        let jsonDictionary = try JSONSerialization.jsonObject(with: data) as! JSONDictionary
+                        if let jsonArray = jsonDictionary["results"] as? [JSONDictionary] {
+                            for jsonShip in jsonArray {
                                 let ship = StarshipData()
-                                ship.name = ship["name"]
-                                //ship.model = ship["model"]
-                                //ship.crew = ship["crew"]
-                                //ship.cost = ship["cost_in_credits"]
-                                starshipData.append(ship)
+                                ship.name = jsonShip["name"] as? String
+                                ship.model = jsonShip["model"] as? String
+                                ship.crew = jsonShip["crew"] as? String
+                                ship.cost = jsonShip["cost_in_credits"] as? String
+                                self.starshipData.append(ship)
                             }
-                        }*/
+                            
+                            DispatchQueue.main.async {
+                                self.tableView.reloadData()
+                            }
+                        }
                     } catch {
                         // Handle errors
                     }
@@ -38,8 +50,21 @@ class TableViewController: UITableViewController {
                 }.resume()
         }
     }
+    
+    // MARK: - UITableViewDataSource
+    
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return starshipData.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for:indexPath) as UITableViewCell
+        
+        let starship = starshipData[indexPath.row]
+        cell.textLabel?.text = starship.name
+        cell.detailTextLabel?.text = "Crew: \(starship.crew ?? "")    Cost: $\(starship.cost ?? "")"
 
-    override func viewWillAppear(_ animated: Bool) {
+        return cell
     }
 
 }
