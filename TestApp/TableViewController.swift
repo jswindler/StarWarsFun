@@ -27,9 +27,9 @@ class TableViewController: UITableViewController {
             URLSession.shared.dataTask(with: url) { (data, response, error) in
                 if let data = data {
                     // Parse JSON response
-                    do {
-                        let jsonDictionary = try JSONSerialization.jsonObject(with: data) as! JSONDictionary
-                        if let jsonArray = jsonDictionary["results"] as? [JSONDictionary] {
+//                    do {
+                        let jsonDictionary = try? JSONSerialization.jsonObject(with: data) as! JSONDictionary
+                        if let jsonArray = jsonDictionary?["results"] as? [JSONDictionary] {
                             for jsonShip in jsonArray {
                                 let ship = StarshipData()
                                 ship.name = jsonShip["name"] as? String
@@ -43,15 +43,13 @@ class TableViewController: UITableViewController {
                                 self.tableView.reloadData()
                             }
                         }
-                    } catch {
+                    //} catch {
                         // Handle errors
-                    }
+                    //}
                 }
                 }.resume()
         }
     }
-    
-    // MARK: - UITableViewDataSource
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return starshipData.count
@@ -67,5 +65,10 @@ class TableViewController: UITableViewController {
         return cell
     }
 
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let controller = storyboard?.instantiateViewController(withIdentifier: "StarshipDetailView") {
+            navigationController?.pushViewController(controller, animated: true)
+        }
+    }
 }
 

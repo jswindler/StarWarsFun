@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -69,6 +70,46 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Uey-Xx-qd0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="110" y="133"/>
+        </scene>
+        <!--Starship Detail View Controller-->
+        <scene sceneID="0wt-bG-MMd">
+            <objects>
+                <viewController storyboardIdentifier="StarshipDetailView" id="KRU-6v-WwL" customClass="StarshipDetailViewController" customModule="TestApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8Bn-Yf-MZf">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SbV-1V-VsH">
+                                <rect key="frame" x="166.5" y="36" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="boQ-v2-mOX">
+                                <rect key="frame" x="16" y="73" width="343" height="343"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="boQ-v2-mOX" secondAttribute="height" multiplier="1:1" id="Ez6-wc-VYD"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="SbV-1V-VsH" firstAttribute="top" secondItem="kLk-1J-yaQ" secondAttribute="top" constant="16" id="Hho-zZ-LE9"/>
+                            <constraint firstItem="kLk-1J-yaQ" firstAttribute="trailing" secondItem="boQ-v2-mOX" secondAttribute="trailing" constant="16" id="LQP-ax-uuE"/>
+                            <constraint firstItem="boQ-v2-mOX" firstAttribute="leading" secondItem="kLk-1J-yaQ" secondAttribute="leading" constant="16" id="TXS-z0-4ij"/>
+                            <constraint firstItem="SbV-1V-VsH" firstAttribute="centerX" secondItem="8Bn-Yf-MZf" secondAttribute="centerX" id="UFO-WB-Fco"/>
+                            <constraint firstItem="boQ-v2-mOX" firstAttribute="top" secondItem="SbV-1V-VsH" secondAttribute="bottom" constant="16" id="gkl-Vx-uqp"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kLk-1J-yaQ"/>
+                    </view>
+                    <connections>
+                        <outlet property="headerLabel" destination="SbV-1V-VsH" id="9xW-UN-jvh"/>
+                        <outlet property="imageView" destination="boQ-v2-mOX" id="Ouw-zc-1GP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s6E-Bk-oxt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="896.79999999999995" y="132.68365817091455"/>
         </scene>
     </scenes>
 </document>

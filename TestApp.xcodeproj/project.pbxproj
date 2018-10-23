@@ -14,6 +14,7 @@
 		323F3065208E6A9F00613DAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 323F3064208E6A9F00613DAA /* Assets.xcassets */; };
 		323F3068208E6A9F00613DAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 323F3066208E6A9F00613DAA /* LaunchScreen.storyboard */; };
 		3284F70D217F779D0003AC4B /* StarshipData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284F70C217F779D0003AC4B /* StarshipData.swift */; };
+		3284F711217F8FC60003AC4B /* StarshipDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284F710217F8FC60003AC4B /* StarshipDetailViewController.swift */; };
 		3292C427209218D2002CEAAB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3292C426209218D2002CEAAB /* CoreGraphics.framework */; };
 		3292C429209218D8002CEAAB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3292C428209218D8002CEAAB /* CoreText.framework */; };
 		3292C42B20922ABF002CEAAB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3292C42A20922ABF002CEAAB /* UIKit.framework */; };
@@ -29,6 +30,7 @@
 		323F3067208E6A9F00613DAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		323F3069208E6A9F00613DAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3284F70C217F779D0003AC4B /* StarshipData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipData.swift; sourceTree = "<group>"; };
+		3284F710217F8FC60003AC4B /* StarshipDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StarshipDetailViewController.swift; sourceTree = "<group>"; };
 		3292C426209218D2002CEAAB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3292C428209218D8002CEAAB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		3292C42A20922ABF002CEAAB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -78,6 +80,7 @@
 				323F305D208E6A9E00613DAA /* AppDelegate.swift */,
 				323F305F208E6A9E00613DAA /* TableViewController.swift */,
 				3284F70C217F779D0003AC4B /* StarshipData.swift */,
+				3284F710217F8FC60003AC4B /* StarshipDetailViewController.swift */,
 				323F3061208E6A9E00613DAA /* Main.storyboard */,
 				323F3064208E6A9F00613DAA /* Assets.xcassets */,
 				323F3066208E6A9F00613DAA /* LaunchScreen.storyboard */,
@@ -202,6 +205,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				323F3060208E6A9E00613DAA /* TableViewController.swift in Sources */,
+				3284F711217F8FC60003AC4B /* StarshipDetailViewController.swift in Sources */,
 				323F305E208E6A9E00613DAA /* AppDelegate.swift in Sources */,
 				3284F70D217F779D0003AC4B /* StarshipData.swift in Sources */,
 			);
@@ -352,7 +356,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FR6B89YK77;
 				INFOPLIST_FILE = TestApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = BambooHR.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -370,7 +377,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = FR6B89YK77;
 				INFOPLIST_FILE = TestApp/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = BambooHR.TestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
