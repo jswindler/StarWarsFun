@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		309A76554674CAB31E4D62CF /* Pods_TestApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9122D7278233D44053EC580B /* Pods_TestApp.framework */; };
 		323F305E208E6A9E00613DAA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F305D208E6A9E00613DAA /* AppDelegate.swift */; };
-		323F3060208E6A9E00613DAA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F305F208E6A9E00613DAA /* ViewController.swift */; };
+		323F3060208E6A9E00613DAA /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 323F305F208E6A9E00613DAA /* TableViewController.swift */; };
 		323F3063208E6A9E00613DAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 323F3061208E6A9E00613DAA /* Main.storyboard */; };
 		323F3065208E6A9F00613DAA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 323F3064208E6A9F00613DAA /* Assets.xcassets */; };
 		323F3068208E6A9F00613DAA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 323F3066208E6A9F00613DAA /* LaunchScreen.storyboard */; };
+		3284F70D217F779D0003AC4B /* StarshipData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3284F70C217F779D0003AC4B /* StarshipData.swift */; };
 		3292C427209218D2002CEAAB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3292C426209218D2002CEAAB /* CoreGraphics.framework */; };
 		3292C429209218D8002CEAAB /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3292C428209218D8002CEAAB /* CoreText.framework */; };
 		3292C42B20922ABF002CEAAB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3292C42A20922ABF002CEAAB /* UIKit.framework */; };
@@ -22,11 +23,12 @@
 /* Begin PBXFileReference section */
 		323F305A208E6A9D00613DAA /* TestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		323F305D208E6A9E00613DAA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		323F305F208E6A9E00613DAA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		323F305F208E6A9E00613DAA /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		323F3062208E6A9E00613DAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		323F3064208E6A9F00613DAA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		323F3067208E6A9F00613DAA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		323F3069208E6A9F00613DAA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3284F70C217F779D0003AC4B /* StarshipData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarshipData.swift; sourceTree = "<group>"; };
 		3292C426209218D2002CEAAB /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		3292C428209218D8002CEAAB /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		3292C42A20922ABF002CEAAB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -74,7 +76,8 @@
 			isa = PBXGroup;
 			children = (
 				323F305D208E6A9E00613DAA /* AppDelegate.swift */,
-				323F305F208E6A9E00613DAA /* ViewController.swift */,
+				323F305F208E6A9E00613DAA /* TableViewController.swift */,
+				3284F70C217F779D0003AC4B /* StarshipData.swift */,
 				323F3061208E6A9E00613DAA /* Main.storyboard */,
 				323F3064208E6A9F00613DAA /* Assets.xcassets */,
 				323F3066208E6A9F00613DAA /* LaunchScreen.storyboard */,
@@ -198,8 +201,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				323F3060208E6A9E00613DAA /* ViewController.swift in Sources */,
+				323F3060208E6A9E00613DAA /* TableViewController.swift in Sources */,
 				323F305E208E6A9E00613DAA /* AppDelegate.swift in Sources */,
+				3284F70D217F779D0003AC4B /* StarshipData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +280,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -330,7 +334,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
